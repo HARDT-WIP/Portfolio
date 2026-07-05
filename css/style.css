@@ -131,17 +131,25 @@ section { padding: 120px 0; }
 	font-weight: 600;
 	font-size: 0.95rem;
 	border: 1px solid var(--border-strong);
-	transition: background var(--dur) var(--ease), border-color var(--dur) var(--ease), transform var(--dur) var(--ease), color var(--dur) var(--ease);
+	transition: background var(--dur) var(--ease), border-color var(--dur) var(--ease), transform var(--dur) var(--ease), color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
 	cursor: pointer;
 	min-height: 44px;
 }
-.btn:hover { border-color: var(--fg); transform: translateY(-2px); }
+.btn:hover {
+	border-color: var(--fg);
+	transform: translateY(-2px);
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
 .btn-primary {
 	background: var(--accent);
 	border-color: var(--accent);
 	color: var(--accent-fg);
 }
-.btn-primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+.btn-primary:hover {
+	background: var(--accent-hover);
+	border-color: var(--accent-hover);
+	box-shadow: 0 8px 24px rgba(224, 51, 47, 0.45);
+}
 
 /* ---------------------------------------------------------------- nav */
 .site-header {
@@ -408,6 +416,13 @@ section { padding: 120px 0; }
 	border-radius: 999px;
 	font-size: 0.85rem;
 	color: var(--fg-muted);
+	transition: transform var(--dur) var(--ease), border-color var(--dur) var(--ease), background var(--dur) var(--ease), color var(--dur) var(--ease);
+}
+.skill-tags li:hover {
+	transform: translateY(-3px);
+	border-color: var(--accent);
+	background: var(--surface-hover);
+	color: var(--fg);
 }
 
 /* ---------------------------------------------------------------- work grid (featured, homepage) */
