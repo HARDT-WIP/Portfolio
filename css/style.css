@@ -152,27 +152,26 @@ section { padding: 120px 0; }
 	display: flex;
 	align-items: center;
 	background: transparent;
-	backdrop-filter: blur(0px);
-	-webkit-backdrop-filter: blur(0px);
-	transition: background 600ms var(--ease), backdrop-filter 600ms var(--ease), -webkit-backdrop-filter 600ms var(--ease);
 }
 .site-header::before {
 	content: '';
 	position: absolute;
 	top: 0; left: 0; right: 0;
-	height: calc(var(--nav-h) + 90px);
+	height: calc(var(--nav-h) + 110px);
 	z-index: -1;
 	pointer-events: none;
-	background: linear-gradient(to bottom, rgba(10,10,12,0.8) 0%, rgba(10,10,12,0.45) 55%, rgba(10,10,12,0) 100%);
-	opacity: 1;
-	transition: opacity 600ms var(--ease);
+	background: linear-gradient(to bottom, rgba(10,10,12,0.75) 0%, rgba(10,10,12,0.4) 50%, rgba(10,10,12,0) 100%);
+	-webkit-mask-image: linear-gradient(to bottom, black 0%, black 40%, transparent 100%);
+	mask-image: linear-gradient(to bottom, black 0%, black 40%, transparent 100%);
+	backdrop-filter: blur(0px);
+	-webkit-backdrop-filter: blur(0px);
+	transition: background 600ms var(--ease), backdrop-filter 600ms var(--ease), -webkit-backdrop-filter 600ms var(--ease);
 }
-.site-header.scrolled {
+.site-header.scrolled::before {
 	background: rgba(10, 10, 12, 0.82);
 	backdrop-filter: blur(14px);
 	-webkit-backdrop-filter: blur(14px);
 }
-.site-header.scrolled::before { opacity: 0; }
 .site-header .container {
 	display: flex;
 	align-items: center;
@@ -288,16 +287,23 @@ section { padding: 120px 0; }
 }
 .hero-role {
 	display: flex;
+	align-items: center;
 	gap: 18px;
 	flex-wrap: wrap;
 	color: var(--fg-muted);
 	font-size: 1.1rem;
-	margin: 18px 0 0;
+	margin: 18px 0 36px;
 }
-.hero-role span:not(:last-child)::after {
+.role-tag:not(:last-of-type)::after {
 	content: '/';
 	margin-left: 18px;
 	color: var(--border-strong);
+}
+.hero-arrow {
+	color: var(--accent);
+	font-weight: 700;
+	font-size: 1.2rem;
+	margin: 0 -6px;
 }
 .hero-tagline {
 	font-family: var(--font-heading);
@@ -306,7 +312,6 @@ section { padding: 120px 0; }
 	letter-spacing: 0.16em;
 	text-transform: uppercase;
 	color: var(--accent);
-	margin: 16px 0 36px;
 }
 .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 44px; }
 .hero-social { display: flex; gap: 10px; }
