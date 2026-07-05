@@ -654,8 +654,8 @@ section { padding: 120px 0; }
 	font-size: 0.85rem;
 }
 .footer-mark {
-	width: 20px;
-	height: 20px;
+	width: 26px;
+	height: 26px;
 	opacity: 0.85;
 }
 .footer-social { display: flex; gap: 10px; }
