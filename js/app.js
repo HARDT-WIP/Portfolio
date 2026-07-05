@@ -76,12 +76,22 @@
 		}
 	}
 
-	/* ---------------- back to top ---------------- */
+	/* ---------------- back to top (hidden once the footer is in view, so it never overlaps the footer social icons) ---------------- */
 	var backToTop = document.querySelector('.back-to-top');
+	var siteFooter = document.querySelector('.site-footer');
 	if (backToTop) {
-		window.addEventListener('scroll', function () {
-			backToTop.classList.toggle('is-visible', window.scrollY > 500);
-		}, { passive: true });
+		var footerVisible = false;
+		var updateBackToTop = function () {
+			backToTop.classList.toggle('is-visible', window.scrollY > 500 && !footerVisible);
+		};
+		window.addEventListener('scroll', updateBackToTop, { passive: true });
+		if (siteFooter && 'IntersectionObserver' in window) {
+			var footerObserver = new IntersectionObserver(function (entries) {
+				footerVisible = entries[0].isIntersecting;
+				updateBackToTop();
+			}, { rootMargin: '0px 0px -20px 0px' });
+			footerObserver.observe(siteFooter);
+		}
 	}
 
 	/* ---------------- lightbox ---------------- */
