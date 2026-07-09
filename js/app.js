@@ -28,11 +28,24 @@
 	}
 
 	if (header) {
+		// Fade continuously with scroll position (over 80px) rather than toggling a class at
+		// a single threshold - a discrete on/off switch flickers if scrollY jitters near that
+		// point (trackpad momentum, rubber-band overscroll at the top).
+		var HEADER_FADE_DISTANCE = 80;
+		var headerTicking = false;
+		var updateHeader = function () {
+			var progress = Math.max(0, Math.min(1, window.scrollY / HEADER_FADE_DISTANCE));
+			header.style.setProperty('--scroll-progress', progress);
+			headerTicking = false;
+		};
 		var onScroll = function () {
-			header.classList.toggle('scrolled', window.scrollY > 20);
+			if (!headerTicking) {
+				headerTicking = true;
+				window.requestAnimationFrame(updateHeader);
+			}
 		};
 		window.addEventListener('scroll', onScroll, { passive: true });
-		onScroll();
+		updateHeader();
 	}
 
 	/* ---------------- active nav link (homepage sections) ---------------- */
