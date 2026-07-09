@@ -1,0 +1,16 @@
+{
+  "name": "Samuel Engelhardt — Surface Designer & Digital Modeler",
+  "short_name": "S. Engelhardt",
+  "start_url": "/Portfolio/index.html",
+  "scope": "/Portfolio/",
+  "display": "standalone",
+  "background_color": "#0a0a0c",
+  "theme_color": "#0a0a0c",
+  "icons": [
+    {
+      "src": "images/index/logo.png",
+      "sizes": "100x100",
+      "type": "image/png"
+    }
+  ]
+}
