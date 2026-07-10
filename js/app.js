@@ -7,6 +7,30 @@
 
 	var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+	/* ---------------- header background (solid+blurred once scrolled past the hero) ---------------- */
+	var siteHeader = document.querySelector('.site-header');
+	if (siteHeader) {
+		var ENTER_AT = 60;
+		var EXIT_AT = 24;
+		var headerTicking = false;
+		var updateHeader = function () {
+			var y = window.scrollY;
+			if (y > ENTER_AT) {
+				siteHeader.classList.add('is-scrolled');
+			} else if (y < EXIT_AT) {
+				siteHeader.classList.remove('is-scrolled');
+			}
+			headerTicking = false;
+		};
+		window.addEventListener('scroll', function () {
+			if (!headerTicking) {
+				requestAnimationFrame(updateHeader);
+				headerTicking = true;
+			}
+		}, { passive: true });
+		updateHeader();
+	}
+
 	/* ---------------- nav toggle ---------------- */
 	var navToggle = document.querySelector('.nav-toggle');
 	var navLinks = document.querySelector('.nav-links');
