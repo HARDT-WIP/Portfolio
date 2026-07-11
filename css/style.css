@@ -190,7 +190,7 @@ main > section + section::before {
 	align-items: center;
 	background: transparent;
 	box-shadow: 0 1px 0 rgba(255,255,255,0);
-	transition: background-color 500ms var(--ease), backdrop-filter 500ms var(--ease), box-shadow 500ms var(--ease);
+	transition: background-color 500ms var(--ease), backdrop-filter 500ms var(--ease), box-shadow 500ms var(--ease), height 400ms var(--ease);
 }
 /* slight, constant gradient for legibility over the hero image while unscrolled */
 .site-header::before {
@@ -213,6 +213,10 @@ main > section + section::before {
 	backdrop-filter: blur(16px) saturate(140%);
 	-webkit-backdrop-filter: blur(16px) saturate(140%);
 	box-shadow: 0 1px 0 rgba(255,255,255,0.08), 0 12px 30px rgba(0,0,0,0.35);
+	height: calc(var(--nav-h) - 14px);
+}
+@media (prefers-reduced-motion: reduce) {
+	.site-header { transition: none; }
 }
 .site-header.is-scrolled::before { opacity: 0; }
 .site-header .container {
