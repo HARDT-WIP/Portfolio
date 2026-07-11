@@ -86,12 +86,16 @@ a { color: inherit; }
 }
 
 .wip-mark {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.55rem;
 	font-family: var(--display);
 	font-size: 1.05rem;
 	letter-spacing: 0.02em;
 	text-decoration: none;
 	line-height: 1;
 }
+.wip-mark img { flex: none; }
 .wip-mark span { color: var(--red); }
 
 .wip-nav {
@@ -433,15 +437,17 @@ a { color: inherit; }
 	flex-wrap: wrap;
 }
 .wip-mark.small { font-size: 0.95rem; }
-.wip-footer p {
+.foot-se {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.6rem;
 	font-size: 0.92rem;
 	color: var(--ink-dim);
+	text-decoration: none;
+	transition: color 180ms ease;
 }
-.wip-footer p a {
-	color: var(--ink);
-	text-decoration-color: var(--red);
-	text-underline-offset: 3px;
-}
+.foot-se img { flex: none; }
+.foot-se:hover { color: var(--ink); }
 .foot-copy {
 	font-size: 0.85rem;
 	color: var(--ink-dim);
