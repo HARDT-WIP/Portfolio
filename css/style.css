@@ -648,6 +648,31 @@ main > section + section::before {
 .project-card h3 { font-size: 1.2rem; margin-bottom: 8px; }
 .project-card p { color: var(--fg-muted); font-size: 0.92rem; margin: 0; }
 
+/* role placeholder pages (current positions with no public work yet) */
+.role-meta { max-width: 760px; margin: 0 0 40px; }
+.role-status {
+	max-width: 760px;
+	border: 1px solid var(--border);
+	border-radius: var(--radius-lg);
+	background: var(--surface);
+	padding: 40px 40px 42px;
+	position: relative;
+	overflow: hidden;
+}
+/* the specular rule motif, stood up as a left-edge marker on the panel */
+.role-status::before {
+	content: '';
+	position: absolute;
+	left: 0; top: 0; bottom: 0;
+	width: 3px;
+	background: linear-gradient(to bottom, transparent 0%, var(--accent) 30%, var(--accent) 70%, transparent 100%);
+}
+.role-status h2 { font-size: 1.4rem; margin-bottom: 10px; }
+.role-status p { color: var(--fg-muted); margin: 0; max-width: 62ch; }
+@media (max-width: 700px) {
+	.role-status { padding: 32px 26px 34px; }
+}
+
 /* ---------------------------------------------------------------- lightbox */
 .lightbox {
 	position: fixed; inset: 0;
