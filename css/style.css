@@ -234,6 +234,7 @@ main > section + section::before {
 	font-size: 1.05rem;
 }
 .brand img { width: 36px; height: 36px; border-radius: 4px; object-fit: contain; }
+.brand img.brand-lockup { width: auto; height: 28px; border-radius: 0; }
 
 .nav-links {
 	display: flex;
@@ -782,9 +783,10 @@ main > section + section::before {
 	font-size: 0.85rem;
 }
 .footer-mark {
-	width: 26px;
-	height: 26px;
-	opacity: 0.85;
+	width: auto;
+	height: 20px;
+	opacity: 0.9;
+	vertical-align: middle;
 }
 .footer-social { display: flex; gap: 10px; }
 .footer-social a {
