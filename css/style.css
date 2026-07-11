@@ -390,6 +390,18 @@ main > section + section::before {
 	text-transform: uppercase;
 	color: var(--accent);
 }
+/* mobile: two controlled lines - roles pair up, tagline rides with the last role */
+.role-break { display: none; }
+@media (max-width: 640px) {
+	.hero-role { font-size: 0.88rem; gap: 10px 10px; }
+	.role-tag:not(:last-of-type)::after { margin-left: 10px; }
+	.role-break { display: block; flex-basis: 100%; height: 0; }
+	.role-tag:nth-of-type(2)::after,
+	.role-tag:nth-of-type(4)::after { content: none; }
+	.hero-tagline { font-size: 0.64rem; letter-spacing: 0.08em; }
+	.hero-arrow { font-size: 0.95rem; }
+	.hero-tagline-group { gap: 6px; }
+}
 .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 44px; }
 .hero-social { display: flex; gap: 10px; }
 .hero-social a {
