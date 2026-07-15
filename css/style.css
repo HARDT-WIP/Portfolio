@@ -611,9 +611,20 @@ main > section + section::before {
 	transition: transform 500ms var(--ease);
 }
 .gallery-item:hover img { transform: scale(1.07); }
-/* full-frame variant: card keeps the image's own 16:9, nothing cropped away */
-.gallery-item.g-wide img { aspect-ratio: 16 / 9; transform: none; }
-.gallery-item.g-wide:hover img { transform: scale(1.04); }
+/* standalone lightbox work-card: the home-page card, reused as a button
+   with the description under the image and nothing cropped at rest */
+button.work-card {
+	width: 100%;
+	max-width: 760px;
+	padding: 0;
+	text-align: left;
+	font: inherit;
+	color: inherit;
+	cursor: pointer;
+}
+button.work-card .work-card-media img { transform: none; }
+button.work-card:hover .work-card-media img { transform: scale(1.04); }
+.role-status + button.work-card,
 .role-status + .gallery-grid,
 .gallery-grid + .role-status { margin-top: 40px; }
 .gallery-item-info {
