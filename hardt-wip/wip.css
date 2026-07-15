@@ -284,6 +284,53 @@ a { color: inherit; }
 	to { transform: translateX(-50%); }
 }
 
+/* ---------- brands ---------- */
+
+.brands {
+	padding-block: clamp(4rem, 8vw, 6.5rem);
+	background: var(--bg);
+}
+.brands-title {
+	text-align: center;
+	font-size: 0.85rem;
+	font-weight: 500;
+	letter-spacing: 0.22em;
+	text-transform: uppercase;
+	color: var(--ink-dim);
+}
+.brands-grid {
+	list-style: none;
+	margin-top: clamp(2.2rem, 4vw, 3.2rem);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	column-gap: clamp(2rem, 4vw, 3.25rem);
+	row-gap: 2.2rem;
+	max-width: 1100px;
+	margin-inline: auto;
+}
+.brands-grid li {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+/* every mark forced to one color and one optical size, whatever the source file */
+.brands-grid img {
+	height: 26px;
+	width: auto;
+	filter: brightness(0) invert(1);
+	opacity: 0.55;
+	transition: opacity 250ms var(--out);
+}
+.brands-grid img.b-wide { height: 15px; }
+.brands-grid li:hover img { opacity: 0.95; }
+@media (max-width: 560px) {
+	.brands-grid { column-gap: 1.8rem; row-gap: 1.6rem; }
+	.brands-grid img { height: 21px; }
+	.brands-grid img.b-wide { height: 12px; }
+}
+
 /* ---------- footer ---------- */
 
 .wip-footer {
