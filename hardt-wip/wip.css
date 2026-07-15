@@ -201,8 +201,17 @@ a { color: inherit; }
 
 .hero-sub {
 	margin-top: 1.6rem;
-	max-width: 34ch;
+	max-width: 38ch;
 	font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+	color: var(--ink);
+	text-wrap: pretty;
+}
+
+.hero-story {
+	margin-top: 1.1rem;
+	max-width: 52ch;
+	font-size: 0.98rem;
+	line-height: 1.7;
 	color: var(--ink-dim);
 	text-wrap: pretty;
 }
@@ -238,13 +247,15 @@ a { color: inherit; }
 /* load-in: rises only when JS present, static otherwise */
 .js .wordmark,
 .js .hero-sub,
+.js .hero-story,
 .js .hero .btn {
 	opacity: 0;
 	transform: translateY(22px);
 	animation: rise 800ms var(--out) forwards;
 }
 .js .hero-sub { animation-delay: 140ms; }
-.js .hero .btn { animation-delay: 260ms; }
+.js .hero-story { animation-delay: 220ms; }
+.js .hero .btn { animation-delay: 320ms; }
 @keyframes rise {
 	to { opacity: 1; transform: translateY(0); }
 }
@@ -342,6 +353,7 @@ a { color: inherit; }
 @media (prefers-reduced-motion: reduce) {
 	.js .wordmark,
 	.js .hero-sub,
+	.js .hero-story,
 	.js .hero .btn {
 		animation: none;
 		opacity: 1;
