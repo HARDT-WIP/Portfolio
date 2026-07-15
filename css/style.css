@@ -611,6 +611,11 @@ main > section + section::before {
 	transition: transform 500ms var(--ease);
 }
 .gallery-item:hover img { transform: scale(1.07); }
+/* full-frame variant: card keeps the image's own 16:9, nothing cropped away */
+.gallery-item.g-wide img { aspect-ratio: 16 / 9; transform: none; }
+.gallery-item.g-wide:hover img { transform: scale(1.04); }
+.role-status + .gallery-grid,
+.gallery-grid + .role-status { margin-top: 40px; }
 .gallery-item-info {
 	position: absolute; inset: 0;
 	display: flex;
