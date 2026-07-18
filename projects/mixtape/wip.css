@@ -37,42 +37,13 @@ body {
 	line-height: 1.6;
 	-webkit-font-smoothing: antialiased;
 	overflow-x: hidden;
+	cursor: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2232%22 height=%2232%22 viewBox=%220 0 32 32%22%3E%3Cpath d=%22M4 3 L4 24.5 L9.7 19.6 L14 28 L18 26 L13.7 17.6 L21.5 17.6 Z%22 fill=%22%23e5433f%22 stroke=%22%23f4f2ef%22 stroke-width=%221.6%22 stroke-linejoin=%22round%22/%3E%3C/svg%3E') 4 3, auto;
 }
 img { -webkit-user-drag: none; }
 
 /* custom cursor */
-.cursor-dot, .cursor-ring {
-	position: fixed;
-	top: 0;
-	left: 0;
-	border-radius: 50%;
-	pointer-events: none;
-	z-index: 9999;
-	transform: translate(-50%, -50%);
-}
-.cursor-dot {
-	width: 6px;
-	height: 6px;
-	background: var(--red);
-	transition: opacity 200ms ease, width 200ms var(--out), height 200ms var(--out);
-}
-.cursor-ring {
-	width: 34px;
-	height: 34px;
-	border: 1.5px solid var(--red);
-	transition: width 220ms var(--out), height 220ms var(--out), opacity 200ms ease, left 140ms ease-out, top 140ms ease-out, background 220ms var(--out);
-}
-.cursor-ring.is-active {
-	width: 56px;
-	height: 56px;
-	background: rgba(229, 67, 63, 0.1);
-}
-.cursor-dot.is-active { width: 0; height: 0; }
-@media (prefers-reduced-motion: reduce) {
-	.cursor-ring { transition: opacity 200ms ease, background 220ms ease; }
-}
-html.has-custom-cursor, html.has-custom-cursor * {
-	cursor: none !important;
+a, button, [role="button"] {
+	cursor: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2232%22 height=%2232%22 viewBox=%220 0 32 32%22%3E%3Cpath d=%22M4 3 L4 24.5 L9.7 19.6 L14 28 L18 26 L13.7 17.6 L21.5 17.6 Z%22 fill=%22%23f4f2ef%22 stroke=%22%23e5433f%22 stroke-width=%221.6%22 stroke-linejoin=%22round%22/%3E%3C/svg%3E') 4 3, pointer;
 }
 
 img { display: block; max-width: 100%; height: auto; }
