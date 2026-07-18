@@ -52,7 +52,7 @@ img { -webkit-user-drag: none; }
 	pointer-events: none;
 	z-index: 9999;
 	transform: translate(-50%, -50%);
-	transition: width 220ms var(--out), height 220ms var(--out), opacity 200ms ease, left 140ms ease-out, top 140ms ease-out, background 220ms var(--out);
+	transition: width 220ms var(--out), height 220ms var(--out), opacity 200ms ease, background 220ms var(--out);
 }
 .cursor-ring.is-active {
 	width: 48px;

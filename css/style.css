@@ -82,7 +82,7 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 	pointer-events: none;
 	z-index: 9999;
 	transform: translate(-50%, -50%);
-	transition: width 220ms var(--ease), height 220ms var(--ease), opacity 200ms ease, left 140ms ease-out, top 140ms ease-out, background 220ms var(--ease);
+	transition: width 220ms var(--ease), height 220ms var(--ease), opacity 200ms ease, background 220ms var(--ease);
 }
 .cursor-ring.is-active {
 	width: 48px;
