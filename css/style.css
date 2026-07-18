@@ -806,6 +806,7 @@ button.project-card {
 .phone-lines { display: flex; flex-direction: column; gap: 8px; }
 .phone-line { display: flex; align-items: center; gap: 10px; }
 .phone-line .flag { width: 20px; height: 14px; border-radius: 2px; flex-shrink: 0; box-shadow: 0 0 0 1px var(--border); }
+.phone-line .flag.flag-square { width: 14px; height: 14px; }
 
 /* ---------------------------------------------------------------- footer */
 .site-footer {
