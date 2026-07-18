@@ -136,3 +136,14 @@ Minimum bar: no broken references, changed pages screenshot-checked,
 - `images/volvo/concept.pdf` is currently unreferenced; kept on purpose as
   a possible future download link. If it's still unused by the next audit,
   delete it.
+- No birth date on the site — removed deliberately (recruiter bias/privacy
+  hygiene). Don't re-add it.
+- Scott and Kia pages use "How I Work(ed)" process steps (`.process-steps`)
+  to communicate workflow while the actual work is under NDA. Owner
+  fact-checked the step copy 2026-07-18. Replace steps with real project
+  cards as NDA work gets cleared.
+- CV PDF (`images/index/CV_Samuel_Engelhardt.pdf`) confirmed current as of
+  2026-07-18 (includes the Scott Sports role). When a role changes, the CV
+  export and the About facts must be updated together.
+- Homepage carries JSON-LD Person schema in `<head>` — update `worksFor`
+  when the current employer changes.
