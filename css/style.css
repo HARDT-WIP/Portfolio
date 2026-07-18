@@ -784,6 +784,9 @@ button.project-card {
 .contact-card h3 { font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--fg-faint); margin-bottom: 8px; }
 .contact-card p { margin: 0; font-weight: 500; }
 .contact-card a:hover { color: var(--accent); }
+.phone-lines { display: flex; flex-direction: column; gap: 8px; }
+.phone-line { display: flex; align-items: center; gap: 10px; }
+.phone-line .flag { width: 20px; height: 14px; border-radius: 2px; flex-shrink: 0; box-shadow: 0 0 0 1px var(--border); }
 
 /* ---------------------------------------------------------------- footer */
 .site-footer {
