@@ -451,6 +451,10 @@ a { color: inherit; }
 	line-height: 1.55;
 	color: var(--ink-dim);
 }
+.tilt-demo-cta {
+	display: inline-flex;
+	margin-top: clamp(2rem, 4vw, 2.8rem);
+}
 @media (prefers-reduced-motion: reduce) {
 	.tilt-card { transform: none !important; }
 }
