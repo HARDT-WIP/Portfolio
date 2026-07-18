@@ -631,12 +631,12 @@ main > section + section::before {
 }
 .gallery-item img {
 	width: 100%;
-	aspect-ratio: 4/3;
+	aspect-ratio: 16/9;
 	object-fit: cover;
-	transform: scale(1.03);
+	transform: scale(1);
 	transition: transform 500ms var(--ease);
 }
-.gallery-item:hover img { transform: scale(1.07); }
+.gallery-item:hover img { transform: scale(1.05); }
 /* project card reused as a lightbox button (e.g. released pieces on role pages) */
 button.project-card {
 	padding: 0;
