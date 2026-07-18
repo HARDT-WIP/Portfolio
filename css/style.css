@@ -51,6 +51,11 @@
 /* ---------------------------------------------------------------- reset */
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+html, body {
+	user-select: none;
+	-webkit-user-select: none;
+	-webkit-touch-callout: none;
+}
 body {
 	margin: 0;
 	background: var(--bg);
@@ -60,14 +65,44 @@ body {
 	line-height: 1.65;
 	-webkit-font-smoothing: antialiased;
 }
-img { max-width: 100%; display: block; }
+img { max-width: 100%; display: block; -webkit-user-drag: none; }
 a { color: inherit; text-decoration: none; }
 ul { list-style: none; margin: 0; padding: 0; }
 button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
-button, .btn, .work-card, .project-card, .nav-links a, .nav-toggle, .hero-social a,
-.footer-social a, .back-to-top, .gallery-item, .lightbox-close, .lightbox-nav, .back-link {
-	user-select: none;
-	-webkit-user-select: none;
+
+/* ---------------------------------------------------------------- custom cursor */
+.cursor-dot, .cursor-ring {
+	position: fixed;
+	top: 0;
+	left: 0;
+	border-radius: 50%;
+	pointer-events: none;
+	z-index: 9999;
+	transform: translate(-50%, -50%);
+}
+.cursor-dot {
+	width: 6px;
+	height: 6px;
+	background: var(--accent);
+	transition: opacity 200ms ease, width 200ms var(--ease), height 200ms var(--ease);
+}
+.cursor-ring {
+	width: 34px;
+	height: 34px;
+	border: 1.5px solid var(--accent);
+	transition: width 220ms var(--ease), height 220ms var(--ease), opacity 200ms ease, left 140ms ease-out, top 140ms ease-out, background 220ms var(--ease);
+}
+.cursor-ring.is-active {
+	width: 56px;
+	height: 56px;
+	background: rgba(229, 67, 63, 0.1);
+}
+.cursor-dot.is-active { width: 0; height: 0; }
+@media (prefers-reduced-motion: reduce) {
+	.cursor-ring { transition: opacity 200ms ease, background 220ms ease; }
+}
+html.has-custom-cursor, html.has-custom-cursor * {
+	cursor: none !important;
 }
 h1, h2, h3, h4, h5, h6 {
 	font-family: var(--font-heading);
