@@ -40,4 +40,10 @@
 			}
 		});
 	}
+
+	/* tilt & glare demo cards (skip for reduced-motion users) */
+	var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+	if (!reducedMotion && typeof VanillaTilt !== 'undefined') {
+		VanillaTilt.init(document.querySelectorAll('.tilt-card'));
+	}
 })();

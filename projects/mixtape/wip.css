@@ -363,6 +363,98 @@ a { color: inherit; }
 	.brands-grid img.b-wide { height: 12px; }
 }
 
+/* ---------- tilt & glare demo ---------- */
+
+.tilt-demo {
+	position: relative;
+	overflow: hidden;
+	padding-block: clamp(4rem, 8vw, 6.5rem);
+	background: var(--bg-2);
+	border-block: 1px solid var(--line);
+}
+.tilt-demo-blob {
+	position: absolute;
+	border-radius: 50%;
+	pointer-events: none;
+	filter: blur(2px);
+}
+.tilt-demo-blob-a {
+	width: 55%;
+	aspect-ratio: 1;
+	top: -15%;
+	right: -10%;
+	background: radial-gradient(circle, rgba(229, 67, 63, 0.16), transparent 65%);
+}
+.tilt-demo-blob-b {
+	width: 40%;
+	aspect-ratio: 1;
+	bottom: -20%;
+	left: -8%;
+	background: radial-gradient(circle, rgba(229, 67, 63, 0.1), transparent 65%);
+}
+.tilt-demo .wrap { position: relative; z-index: 1; }
+.tilt-demo .brands-title { text-align: left; }
+.tilt-demo-title {
+	font-family: var(--display);
+	font-size: clamp(1.6rem, 3.4vw, 2.4rem);
+	letter-spacing: -0.01em;
+	text-transform: uppercase;
+	color: var(--ink);
+	margin-top: 0.6rem;
+	max-width: 20ch;
+}
+.tilt-cards {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.75rem;
+	margin-top: clamp(2.4rem, 5vw, 3.5rem);
+}
+.tilt-card {
+	position: relative;
+	flex: 1 1 260px;
+	max-width: 340px;
+	min-height: 300px;
+	border-radius: 16px;
+	background: rgba(255, 255, 255, 0.04);
+	border-top: 1px solid rgba(255, 255, 255, 0.14);
+	border-left: 1px solid rgba(255, 255, 255, 0.14);
+	box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.35);
+	backdrop-filter: blur(6px);
+	overflow: hidden;
+	display: flex;
+	align-items: flex-end;
+}
+.tilt-card-content {
+	position: relative;
+	z-index: 1;
+	padding: 1.75rem;
+}
+.tilt-card-num {
+	position: absolute;
+	top: -1.4rem;
+	right: 0.75rem;
+	font-family: var(--display);
+	font-size: 5rem;
+	color: rgba(255, 255, 255, 0.08);
+	pointer-events: none;
+}
+.tilt-card-content h3 {
+	font-family: var(--display);
+	font-size: 1.15rem;
+	text-transform: uppercase;
+	letter-spacing: -0.01em;
+	color: var(--ink);
+	margin-bottom: 0.6rem;
+}
+.tilt-card-content p {
+	font-size: 0.92rem;
+	line-height: 1.55;
+	color: var(--ink-dim);
+}
+@media (prefers-reduced-motion: reduce) {
+	.tilt-card { transform: none !important; }
+}
+
 /* ---------- footer ---------- */
 
 .wip-footer {
