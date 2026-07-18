@@ -411,9 +411,9 @@ a { color: inherit; }
 }
 .tilt-card {
 	position: relative;
-	flex: 1 1 260px;
-	max-width: 340px;
-	min-height: 300px;
+	flex: 1 1 320px;
+	max-width: 360px;
+	height: 300px;
 	border-radius: 16px;
 	background: rgba(255, 255, 255, 0.04);
 	border-top: 1px solid rgba(255, 255, 255, 0.14);
