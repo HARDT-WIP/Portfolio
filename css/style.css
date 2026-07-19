@@ -509,6 +509,7 @@ main > section + section::before {
 	gap: 28px;
 	margin-top: 36px;
 }
+.skill-group-wide { grid-column: 1 / -1; }
 .skill-group h3 {
 	font-size: 0.85rem;
 	letter-spacing: 0.08em;
