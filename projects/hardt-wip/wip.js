@@ -41,6 +41,24 @@
 		});
 	}
 
+	/* back to top */
+	var backToTop = document.querySelector('.back-to-top');
+	var wipFooter = document.querySelector('.wip-footer');
+	if (backToTop) {
+		var updateBackToTop = function () {
+			backToTop.classList.toggle('is-visible', window.scrollY > 500);
+		};
+		window.addEventListener('scroll', updateBackToTop, { passive: true });
+		if (wipFooter && 'IntersectionObserver' in window) {
+			new IntersectionObserver(function (entries) {
+				var entry = entries[0];
+				backToTop.style.bottom = entry.isIntersecting
+					? (entry.boundingClientRect.height + 24) + 'px'
+					: '';
+			}, { threshold: 0 }).observe(wipFooter);
+		}
+	}
+
 	/* tilt & glare demo cards (skip for reduced-motion users) */
 	var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 	if (!reducedMotion && typeof VanillaTilt !== 'undefined') {
