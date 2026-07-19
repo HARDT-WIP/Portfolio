@@ -133,9 +133,9 @@ Minimum bar: no broken references, changed pages screenshot-checked,
   gated to `pointer: fine` devices; text selection is disabled site-wide.
 - Old cover variants are deleted, not archived in the tree — git history
   is the archive.
-- `images/volvo/concept.pdf` is currently unreferenced; kept on purpose as
-  a possible future download link. If it's still unused by the next audit,
-  delete it.
+- `images/volvo/concept.pdf` and the kia/scott logo source PNGs were
+  deleted at the 2026-07-19 audit after staying unreferenced (recoverable
+  from git history, like all removed assets).
 - No birth date on the site — removed deliberately (recruiter bias/privacy
   hygiene). Don't re-add it.
 - Scott and Kia pages use "How I Work(ed)" process steps (`.process-steps`)
