@@ -76,7 +76,7 @@ img { display: block; max-width: 100%; height: auto; }
 
 ::selection { background: var(--red); color: #fff; }
 
-a { color: inherit; }
+a { color: inherit; text-decoration: none; }
 
 :focus-visible {
 	outline: 2px solid var(--red);
@@ -522,6 +522,42 @@ a { color: inherit; }
 		gap: 20px;
 	}
 }
+
+/* ---------- personal work ---------- */
+
+.wip-projects {
+	padding-block: clamp(4rem, 8vw, 6.5rem);
+	background: var(--bg);
+}
+.wip-projects-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+	gap: 28px;
+	margin-top: clamp(2.2rem, 4vw, 3.2rem);
+}
+.wip-project-card {
+	display: block;
+	border-radius: 16px;
+	overflow: hidden;
+	background: var(--bg-2);
+	border: 1px solid var(--line);
+	transition: border-color 250ms var(--out), transform 250ms var(--out);
+}
+.wip-project-card:hover { border-color: var(--ink-dim); transform: translateY(-4px); }
+.wip-project-card-media { position: relative; aspect-ratio: 16/9; overflow: hidden; background: var(--bg-2); }
+.wip-project-card-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 600ms var(--out); }
+.wip-project-card:hover .wip-project-card-media img { transform: scale(1.05); }
+.wip-project-card-body { padding: 22px 24px 26px; }
+.wip-project-card-cat {
+	font-family: var(--body);
+	font-size: 0.72rem;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: var(--red);
+	margin-bottom: 8px;
+}
+.wip-project-card h3 { font-family: var(--display); font-size: 1.15rem; text-transform: uppercase; letter-spacing: -0.01em; color: var(--ink); margin-bottom: 6px; }
+.wip-project-card p { color: var(--ink-dim); font-size: 0.92rem; margin: 0; }
 
 /* ---------- back to top ---------- */
 
