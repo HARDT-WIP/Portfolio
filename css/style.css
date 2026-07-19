@@ -529,6 +529,11 @@ main > section + section::before {
 	-webkit-user-select: none;
 	transition: transform var(--dur) var(--ease), border-color var(--dur) var(--ease), background var(--dur) var(--ease), color var(--dur) var(--ease);
 }
+.skill-tags li.tag-core {
+	border-color: rgba(229, 67, 63, 0.45);
+	color: var(--fg);
+	background: var(--bg-elevated);
+}
 .skill-tags li:hover {
 	transform: translateY(-3px);
 	border-color: var(--accent);
