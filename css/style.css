@@ -503,19 +503,34 @@ main > section + section::before {
 }
 .fact dd { margin: 0; font-weight: 500; }
 
+/* label left, tags right: reads as rows so uneven group lengths
+   don't leave holes the way a column grid did */
 .skill-groups {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-	gap: 28px;
+	gap: 16px;
 	margin-top: 36px;
 }
-.skill-group-wide { grid-column: 1 / -1; }
+.skill-group {
+	display: grid;
+	grid-template-columns: 150px 1fr;
+	gap: 18px;
+	align-items: start;
+	padding-top: 16px;
+	border-top: 1px solid var(--border);
+}
+.skill-group:first-child { padding-top: 0; border-top: 0; }
 .skill-group h3 {
 	font-size: 0.85rem;
 	letter-spacing: 0.08em;
 	text-transform: uppercase;
 	color: var(--fg-faint);
-	margin-bottom: 12px;
+	margin-bottom: 0;
+	padding-top: 8px;
+	line-height: 1.3;
+}
+@media (max-width: 640px) {
+	.skill-group { grid-template-columns: 1fr; gap: 10px; }
+	.skill-group h3 { padding-top: 0; }
 }
 .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
 .skill-tags li {
