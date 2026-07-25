@@ -560,6 +560,27 @@ a { color: inherit; text-decoration: none; }
 .wip-project-card h3 { font-family: var(--display); font-size: 1.15rem; text-transform: uppercase; letter-spacing: -0.01em; color: var(--ink); margin-bottom: 6px; }
 .wip-project-card p { color: var(--ink-dim); font-size: 0.92rem; margin: 0; }
 
+/* teaser card: no page to link to yet, so it stays put on hover */
+.wip-project-card.is-teaser { cursor: default; }
+.wip-project-card.is-teaser:hover { transform: none; border-color: var(--line); }
+.wip-project-card.is-teaser:hover .wip-project-card-media img { transform: none; }
+.wip-teaser-badge {
+	position: absolute;
+	left: 16px;
+	bottom: 16px;
+	font-family: var(--body);
+	font-size: 0.68rem;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: var(--ink);
+	padding: 7px 12px;
+	border-radius: 999px;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	background: rgba(12, 12, 14, 0.55);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+}
+
 /* ---------- back to top ---------- */
 
 .back-to-top {
